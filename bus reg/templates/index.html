@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bus reg</title>
+    <style>
+       body{
+        background-image: url(../static/pexels-milodeckert-15127993.jpg); height: 200%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-size: 15px; 
+        color: antiquewhite;
+       }
+    </style>
+</head>
+<body>
+    <center>
+    <h1>BUS REGISTRATION FORM</h1>
+    <form action="/submit" method="post">
+        <label  for="name">NAME:</label><br>
+        <input type="text" placeholder="enter the name" id="name" name="name" required>
+        <br><br>
+        <label for="phone">PHONE NUMBER:</label><br>
+        <input type="text" placeholder="enter the phone number" id="phone" name="phone" required>
+        <br><br> 
+        <label for="email">E-MAIL:</label><br> 
+        <input type="text" placeholder="enter the email" id="email" name="email" required>
+        <br><br>
+        <label for="journey ">JOURNEY FORM:</label><br>
+        <input type="text " id="journey" name="journey" required>
+        <br><br>
+        <label for="destiny" >JOURNEY TO:</label><br> 
+        <input type="text" id="destiny" name="destiny" required>
+        <br><br>
+        <p>please select your payment</p>
+        <input type="radio" id="gpay" name="gpay" value="gpay">
+        <label for="gpay">gpay</label><br>
+        <input type="radio" id="paytm" name="paytm" value="paytm">
+        <label for="paytm">paytm</label><br>
+        <P>please select your gender</P>
+        <input type="radio" id="male" name="male" value="male">
+        <label for="male">male</label><br>
+        <input type="radio" id="female" name="female" value="female">
+        <label for="female">female</label><br><br>
+
+        <button type="submit">REGISTRATION</button>
+
+    
+    
+    
+    </form>
+</center>
+    
+</body>
+</html>
