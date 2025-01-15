@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME</title>
+    <link rel="icon" href="../static/bank-icon-logo-design-vector.jpg">
+    <style>
+        body{
+            background-image: url(../static/34355870_sl_020622_4930_13.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+        .navbar{
+            background: #aed9fd;
+            height: 100px;
+            padding-right: 15px; padding-left: 15px;
+
+        }
+        .a{
+            display: flex;align-items: center;justify-content: space-between;
+            color: beige;
+        }
+        .logo{
+            font-size: xx-large;
+            font-weight: bolder;
+             color:  rgb(41, 20, 134); 
+            text-shadow: 1px 1px antiquewhite;
+
+        }
+        li{
+            list-style: none; display: inline-block;
+            font-weight: bold;
+            color: rgb(41, 20, 134);
+
+        }
+        button{
+            margin-left: 10px;
+            border-radius: 5px;
+            padding:10px ;
+            width: 90px;
+        }
+       
+    </style>
+</head>
+<body> 
+            <nav class="navbar">
+                <div class="a">
+                    <div class="logo">107 BANK</div>
+                    <h1 style="color:  rgb(41, 20, 134);font-size: xx-large;">WELCOME ISAGI</h1>
+                    <ul>
+                        <li>BANK </li><br>
+                        <form action="/sign"method="post">
+                        <button><a href="/sign">sign out</a></button></form>
+                    </ul>
+                </div>
+            </nav> 
+            <ul style="font-size: xx-large;text-align: center;text-shadow: 1px 1px black">
+                <li><a href="/bal" style="color: rgb(252, 252, 252);">Balance</a></li><br><br><br>
+                <li><a href="/send"style="color : rgb(252, 252, 252);">transfer money</a></li><br><br><br>
+                <li><a href="/accdetails"style="color: rgb(252, 252, 252);">A/C details</a></li><br><br><br>
+            </ul>
+
+</body>
+</html>

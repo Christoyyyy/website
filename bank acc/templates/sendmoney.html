@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>send money</title>
+    <link rel="icon" href="../static/bank-icon-logo-design-vector.jpg">
+    <style>
+        body{
+            background-image: url(../static/34355870_sl_020622_4930_13.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color:  rgb(41, 20, 134);
+        }
+       
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f4f4f9;">
+    <div style="text-align: center; background: #aed9fd; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+ 
+    <center>
+    <form  action="/send_money" method="post">
+    
+    <label for="amount">ENTER THE AMOUNT:</label>
+    <input type="number" placeholder="amount" id="amount" name="amount" required> 
+    <br><br>  
+    <label for="sender">SENDER:</label>
+    <input type="number" placeholder="acc number" id="sender" name="sender" required>
+    <br><br>
+    <label for="receiver">RECEIVER:</label>
+    <input type="number" placeholder="acc number" id="receiver" name="receiver" required>
+    <br><br>
+    <button type="submit">tranfer</button>
+</form>
+
+</center>
+    </div>
+
+    
+</body>
+</html>

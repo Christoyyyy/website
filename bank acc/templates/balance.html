@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALANCE</title>
+    <link rel="icon" href="../static/bank-icon-logo-design-vector.jpg">
+    <style>
+        body{
+            background-image: url(../static/34355870_sl_020622_4930_13.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        
+        }
+        
+        
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f4f4f9;">
+    <div style="text-align: center; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <h1>your balance</h1>
+        <form action="/check_balance" method="post">
+            <label for="pin">pin:</label>
+            <input 
+                type="text" 
+                placeholder="Enter your pin" 
+                name="name" 
+                id="name"
+                style="width: 300px; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
+            <button 
+                type="submit" 
+                style="padding: 10px 20px; background-color: #007bff; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+                Submit
+            </button>
+        </form>
+        <p style="margin-top: 20px; font-size: 18px; color: #333;">{{ message }}</p>
+    </div>
+</body>
+</html>
