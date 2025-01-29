@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user details</title>
+</head>
+<body>
+    <h1>user details</h1>
+    <form method="post" action="/details">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="phone">Phone number</label>
+        <input type="number" id="phone" name="phone"><br><br>
+
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age"><br><br>
+
+        <button type="submit">submit</button>
+ </form>
+ <!-- {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul>
+        {% for category, message in messages %}
+            <li style="color: {% if category == 'error' %}red{% else %}green{% endif %};"
+            >{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %} -->
+
+
+    
+</body>
+</html>
