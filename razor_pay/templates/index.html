@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razorpay Payment</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <h1>Pay with Razorpay</h1>
+    <form id="payment-form">
+        <label for="amount">Amount (INR):</label>
+        <input type="number" id="amount" name="amount" required>
+        <button type="button" onclick="payNow()">Pay Now</button>
+    </form>
+
+    <script>
+        async function payNow() {
+            const amount = document.getElementById('amount').value;
+
+            // Create order
+            const response = await fetch('/create_order', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `amount=${amount}`
+            });
+            const order = await response.json();
+
+            if (order.error) {
+                alert(order.error);
+                return;
+            }
+
+            // Open Razorpay Checkout
+            const options = {
+                key: "{{ key_id }}",
+                amount: order.amount,
+                currency: order.currency,
+                name: "Test Payment",
+                description: "Test Transaction",
+                order_id: order.id,
+                handler: function (response) {
+                    fetch('/payment_success', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: `razorpay_payment_id=${response.razorpay_payment_id}&razorpay_order_id=${response.razorpay_order_id}&razorpay_signature=${response.razorpay_signature}`
+                    })
+                    .then(res => res.text())
+                    .then(data => alert(data))
+                    .catch(err => alert(err));
+                },
+                prefill: {
+                    name: "Test User",
+                    email: "test@example.com",
+                    contact: "9999999999"
+                },
+                theme: { color: "#3399cc" }
+            };
+            const rzp = new Razorpay(options);
+            rzp.open();
+        }
+    </script>
+</body>
+</html>
