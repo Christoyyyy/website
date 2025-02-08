@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ffba00;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .error-message {
+            color: red;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .result p {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Certificate Verification</h1>
+        <form action="/get_user_details" method="GET">
+            <input 
+                type="number" 
+                name="certificate_number" 
+                id="certificate_number"
+                placeholder="Enter Certificate ID" 
+                required>
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if message %}
+            <p class="error-message">{{ message }}</p>
+        {% endif %}
+
+        {% if user_details %}
+            <div class="result">
+                <p><strong>NAME:</strong> {{ user_details.name }}</p>
+                <p><strong>PHONE NUMBER:</strong> {{ user_details.phone_number }}</p>
+                <p><strong>EMAIL:</strong> {{ user_details.email }}</p>
+                <p><strong>DOMAIN:</strong> {{ user_details.domain }}</p>
+                <p><strong>START DATE:</strong> {{ user_details.start_date }}</p>
+                <p><strong>END DATE:</strong> {{ user_details.end_date }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
